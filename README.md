@@ -3,5 +3,5 @@ CCTB Team QA1 Boot Camp
 
 Kermen, Mike, Darya, Chris, Farnad
 
-#addNewUser
+# addNewUser
 verify new user
