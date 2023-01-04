@@ -23,7 +23,6 @@ class CreateQuizPage:
 
     def enter_quiz_description(self, quiz_description):
 
-        self.driver.find_element(By.ID, Locators.quiz_description_textbox).clear()
         self.driver.find_element(By.ID, Locators.quiz_description_textbox).click()
         self.driver.find_element(By.ID, Locators.quiz_description_textbox).send_keys(quiz_description)
 
