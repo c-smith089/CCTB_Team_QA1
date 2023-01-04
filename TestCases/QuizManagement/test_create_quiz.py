@@ -69,8 +69,8 @@ class TestLogin(unittest.TestCase):
         createquizpage = CreateQuizPage(self.driver)
         createquizpage.enter_quiz_name(TestData.testquiz1_name)
         createquizpage.enter_quiz_description(TestData.testquiz1_description)
-        createquizpage.click_display_description_checkbox()
         breakpoint()
+        createquizpage.click_display_description_checkbox()
 
         # Timing tab
         createquizpage.click_timing_tab()
