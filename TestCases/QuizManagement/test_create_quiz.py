@@ -62,7 +62,6 @@ class TestLogin(unittest.TestCase):
         testcourse1page.click_edit_mode_toggle()
         testcourse1page.click_add_activity_link()
         testcourse1page.click_add_quiz_button()
-        breakpoint()
 
         # Enter quiz input, select options
 
@@ -71,6 +70,7 @@ class TestLogin(unittest.TestCase):
         createquizpage.enter_quiz_name(TestData.testquiz1_name)
         createquizpage.enter_quiz_description(TestData.testquiz1_description)
         createquizpage.click_display_description_checkbox()
+        breakpoint()
 
         # Timing tab
         createquizpage.click_timing_tab()
