@@ -7,8 +7,8 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
 # Import locators, test data
-from Locators.locators import Locators
-from TestData.test_data import TestData
+from Locators.locators import Locators as l
+from TestData.test_data import TestData as t
 
 # Import pages
 from PageObjects.home_page import HomePage
@@ -29,7 +29,7 @@ class TestLogin(unittest.TestCase):
 
         self.driver.implicitly_wait(30)
         self.driver.maximize_window()
-        self.driver.get(Locators.home_page_url)
+        self.driver.get(l.home_page_url)
 
     def testLogin(self):
 
@@ -39,8 +39,8 @@ class TestLogin(unittest.TestCase):
 
         # Enter credentials, log in
         loginpage = LoginPage(self.driver)
-        loginpage.enter_username(TestData.adminuser1_username)
-        loginpage.enter_password(TestData.adminuser1_password)
+        loginpage.enter_username(t.adminuser1_username)
+        loginpage.enter_password(t.adminuser1_password)
         loginpage.click_login()
 
         # Navigate to admin
@@ -67,13 +67,16 @@ class TestLogin(unittest.TestCase):
 
         # General tab
         createquizpage = CreateQuizPage(self.driver)
-        createquizpage.enter_quiz_name(TestData.testquiz1_name)
-        createquizpage.enter_quiz_description(TestData.testquiz1_description)
-        breakpoint()
-        createquizpage.click_display_description_checkbox()
+        createquizpage.enter_quiz_name(t.testquiz1_name)
+        createquizpage.enter_quiz_description(t.testquiz1_description)
+        createquizpage.click_display_description_checkbox()  # test font editor buttons  too?
 
         # Timing tab
         createquizpage.click_timing_tab()
+        createquizpage.click_open_quiz_checkbox()
+        createquizpage.enter_open_quiz_day(t.open_quiz_day)
+        createquizpage.enter_open_quiz_month(t.open_quiz_month)
+        breakpoint()
 
     def tearDown(self):
 

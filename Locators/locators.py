@@ -96,7 +96,7 @@ class Locators:
 
     # General tab
     quiz_name_field = 'id_name'  # By.ID
-    quiz_description_textbox = 'id_introeditortable'  # By.ID
+    quiz_description_textbox = 'id_introeditoreditable'  # By.ID
     display_description_checkbox = 'id_showdescription'  # By.ID
 
     # Timing tab

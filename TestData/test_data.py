@@ -21,13 +21,13 @@ class TestData:
 
     # Timing tab
     open_quiz_day = '01'
-    open_quiz_month = '01'
+    open_quiz_month = 'January'
     open_quiz_year = '2023'
     open_quiz_hour = '00'
     open_quiz_minute = '00'
 
     close_quiz_day = '02'
-    close_quiz_month = '02'
+    close_quiz_month = 'February'
     close_quiz_year = '2023'
     close_quiz_hour = '00'
     close_quiz_minute = '00'
