@@ -6,9 +6,9 @@ import unittest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
-# Import locators, test data
-from Locators.locators import Locators as locators
-from TestData.test_data import TestData as testdata
+# Import Locators, test data
+from Locators.locators import Locators
+from TestData.test_data import TestData
 
 # Import pages
 from PageObjects.home_page import HomePage
@@ -29,7 +29,7 @@ class TestLogin(unittest.TestCase):
 
         self.driver.implicitly_wait(30)
         self.driver.maximize_window()
-        self.driver.get(locators.home_page_url)
+        self.driver.get(Locators.home_page_url)
 
     def testLogin(self):
 
@@ -39,8 +39,8 @@ class TestLogin(unittest.TestCase):
 
         # Enter credentials, log in
         loginpage = LoginPage(self.driver)
-        loginpage.enter_username(testdata.adminuser1_username)
-        loginpage.enter_password(testdata.adminuser1_password)
+        loginpage.enter_username(TestData.adminuser1_username)
+        loginpage.enter_password(TestData.adminuser1_password)
         loginpage.click_login()
 
         # Navigate to admin
@@ -67,31 +67,31 @@ class TestLogin(unittest.TestCase):
 
         # General tab
         createquizpage = CreateQuizPage(self.driver)
-        createquizpage.enter_quiz_name(testdata.testquiz1_name)
-        createquizpage.enter_quiz_description(testdata.testquiz1_description)
+        createquizpage.enter_quiz_name(TestData.testquiz1_name)
+        createquizpage.enter_quiz_description(TestData.testquiz1_description)
         createquizpage.click_display_description_checkbox()  # test font editor buttons too?
 
         # Timing tab
         createquizpage.click_timing_tab()
 
         createquizpage.click_open_quiz_checkbox()
-        createquizpage.enter_open_quiz_day(testdata.open_quiz_day)
-        createquizpage.enter_open_quiz_month(testdata.open_quiz_month)
-        createquizpage.enter_open_quiz_year(testdata.open_quiz_year)
-        createquizpage.enter_open_quiz_hour(testdata.open_quiz_hour)
-        createquizpage.enter_open_quiz_minute(testdata.open_quiz_minute)
+        createquizpage.enter_open_quiz_day(TestData.open_quiz_day)
+        createquizpage.enter_open_quiz_month(TestData.open_quiz_month)
+        createquizpage.enter_open_quiz_year(TestData.open_quiz_year)
+        createquizpage.enter_open_quiz_hour(TestData.open_quiz_hour)
+        createquizpage.enter_open_quiz_minute(TestData.open_quiz_minute)
 
         createquizpage.click_close_quiz_checkbox()
-        createquizpage.enter_close_quiz_day(testdata.close_quiz_day)
-        createquizpage.enter_close_quiz_month(testdata.close_quiz_month)
-        createquizpage.enter_close_quiz_year(testdata.close_quiz_year)
-        createquizpage.enter_close_quiz_hour(testdata.close_quiz_hour)
-        createquizpage.enter_close_quiz_minute(testdata.close_quiz_minute)
+        createquizpage.enter_close_quiz_day(TestData.close_quiz_day)
+        createquizpage.enter_close_quiz_month(TestData.close_quiz_month)
+        createquizpage.enter_close_quiz_year(TestData.close_quiz_year)
+        createquizpage.enter_close_quiz_hour(TestData.close_quiz_hour)
+        createquizpage.enter_close_quiz_minute(TestData.close_quiz_minute)
 
         createquizpage.click_time_limit_checkbox()
-        createquizpage.enter_time_limit_number(testdata.time_limit_number)
-        createquizpage.enter_time_limit_unit(testdata.time_limit_unit)
-        createquizpage.enter_when_time_expires(testdata.when_time_expires)
+        createquizpage.enter_time_limit_number(TestData.time_limit_number)
+        createquizpage.enter_time_limit_unit(TestData.time_limit_unit)
+        createquizpage.enter_when_time_expires(TestData.when_time_expires)
 
         # Grade tab
         createquizpage.click_grade_tab()
