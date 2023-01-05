@@ -33,7 +33,7 @@ class CreateQuizPage:
     # Timing tab
     def click_timing_tab(self):
 
-        self.driver.find_element(By.XPATH, Locators.timing_tab).click()
+        self.driver.find_element(By.ID, Locators.timing_tab).click()
 
     def click_open_quiz_checkbox(self):
 
@@ -117,7 +117,7 @@ class CreateQuizPage:
     # Grade tab
     def click_grade_tab(self):
 
-        self.driver.find_element(By.XPATH, Locators.grade_tab).click()
+        self.driver.find_element(By.ID, Locators.grade_tab).click()
 
     def enter_grade_category(self, grade_category):
 
@@ -143,7 +143,7 @@ class CreateQuizPage:
     # Layout tab
     def click_layout_tab(self):
 
-        self.driver.find_element(By.XPATH, Locators.layout_tab).click()
+        self.driver.find_element(By.ID, Locators.layout_tab).click()
 
     def enter_new_page(self, new_page):
 
@@ -162,7 +162,7 @@ class CreateQuizPage:
     # Question behaviour tab
     def click_question_behaviour_tab(self):
 
-        self.driver.find_element(By.XPATH, Locators.question_behaviour_tab).click()
+        self.driver.find_element(By.ID, Locators.question_behaviour_tab).click()
 
     def enter_shuffle_answers(self, shuffle_answers):
 
@@ -186,7 +186,7 @@ class CreateQuizPage:
     # Review options tab
     def click_review_options_tab(self):
 
-        self.driver.find_element(By.XPATH, Locators.review_options_tab)
+        self.driver.find_element(By.ID, Locators.review_options_tab).click()
 
     def click_open_attempt_checkbox(self):
 
@@ -242,10 +242,57 @@ class CreateQuizPage:
     def click_immediately_overall_feedback_checkbox(self):
         self.driver.find_element(By.ID, Locators.immediately_overall_feedback_checkbox).click()
 
+    def click_during_correct_checkbox(self):
+
+        self.driver.find_element(By.ID, Locators.during_correct_checkbox).click()
+
+    def click_during_marks_checkbox(self):
+
+        self.driver.find_element(By.ID, Locators.during_marks_checkbox).click()
+
+    def click_during_specific_feedback_checkbox(self):
+
+        self.driver.find_element(By.ID, Locators.during_specific_feedback_checkbox).click()
+
+    def click_during_general_feedback_checkbox(self):
+
+        self.driver.find_element(By.ID, Locators.during_general_feedback_checkbox).click()
+
+    def click_during_right_answer_checkbox(self):
+
+        self.driver.find_element(By.ID, Locators.during_right_answer_checkbox).click()
+
+    def click_closed_attempt_checkbox(self):
+
+        self.driver.find_element(By.ID, Locators.closed_attempt_checkbox).click()
+
+    def click_closed_correct_checkbox(self):
+
+        self.driver.find_element(By.ID, Locators.closed_correct_checkbox).click()
+
+    def click_closed_marks_checkbox(self):
+
+        self.driver.find_element(By.ID, Locators.closed_marks_checkbox).click()
+
+    def click_closed_specific_feedback_checkbox(self):
+
+        self.driver.find_element(By.ID, Locators.closed_specific_feedback_checkbox).click()
+
+    def click_closed_general_feedback_checkbox(self):
+
+        self.driver.find_element(By.ID, Locators.closed_general_feedback_checkbox).click()
+
+    def click_closed_right_answer_checkbox(self):
+
+        self.driver.find_element(By.ID, Locators.closed_right_answer_checkbox).click()
+
+    def click_closed_overall_feedback_checkbox(self):
+        self.driver.find_element(By.ID, Locators.closed_overall_feedback_checkbox).click()
+
     # Appearance tab
     def click_appearance_tab(self):
 
-        self.driver.find_element(By.XPATH, Locators.appearance_tab)
+        self.driver.find_element(By.ID, Locators.appearance_tab).click()
 
     def enter_show_user_picture(self, show_user_picture):
 
@@ -262,7 +309,7 @@ class CreateQuizPage:
         self.driver.find_element(By.ID, Locators.decimal_places_marks_menu).click()
         self.driver.find_element(By.ID, Locators.decimal_places_marks_menu).send_keys(decimal_places_marks)
 
-    def click_appearance_show_more_link(self):
+    def click_appearance_show_more(self):
 
         self.driver.find_element(By.XPATH, Locators.appearance_show_more_link).click()
 
@@ -274,12 +321,13 @@ class CreateQuizPage:
     # Safe Exam Browser tab
     def click_safe_exam_browser_tab(self):
 
-        self.driver.find_element(By.XPATH, Locators.safe_exam_browser_tab).click()
+        self.driver.find_element(By.ID, Locators.safe_exam_browser_tab).click()
 
     def enter_require_seb(self, require_seb):
 
         self.driver.find_element(By.ID, Locators.require_seb_menu).click()
         self.driver.find_element(By.ID, Locators.require_seb_menu).send_keys(require_seb)
+        self.driver.find_element(By.ID, Locators.require_seb_menu).click()
 
     def enter_seb_download(self, seb_download):
 
@@ -295,6 +343,7 @@ class CreateQuizPage:
 
         self.driver.find_element(By.ID, Locators.seb_confirm_quit_menu).click()
         self.driver.find_element(By.ID, Locators.seb_confirm_quit_menu).send_keys(seb_confirm_quit)
+        self.driver.find_element(By.ID, Locators.seb_confirm_quit_menu).click()
 
     def enter_seb_enable_quit(self, seb_enable_quit):
 
@@ -303,8 +352,7 @@ class CreateQuizPage:
 
     def enter_seb_quit_password(self, seb_quit_password):
 
-        self.driver.find_element(By.ID, Locators.seb_quit_password_field).clear()
-        self.driver.find_element(By.ID, Locators.seb_quit_password_field).click()
+        self.driver.find_element(By.XPATH, Locators.seb_quit_password_link).click()
         self.driver.find_element(By.ID, Locators.seb_quit_password_field).send_keys(seb_quit_password)
 
     def enter_seb_enable_reload(self, seb_enable_reload):
@@ -362,20 +410,37 @@ class CreateQuizPage:
         self.driver.find_element(By.ID, Locators.seb_enable_audio_menu).click()
         self.driver.find_element(By.ID, Locators.seb_enable_audio_menu).send_keys(seb_filter_embedded)
 
+    def enter_seb_expression_allow(self, seb_expression_allow):
+
+        self.driver.find_element(By.ID, Locators.seb_expression_allow).click()
+        self.driver.find_element(By.ID, Locators.seb_expression_allow).send_keys(seb_expression_allow)
+
+    def enter_seb_regex_allow(self, seb_regex_allow):
+
+        self.driver.find_element(By.ID, Locators.seb_regex_allow).click()
+        self.driver.find_element(By.ID, Locators.seb_regex_allow).send_keys(seb_regex_allow)
+
+    def enter_seb_expression_block(self, seb_expression_block):
+        self.driver.find_element(By.ID, Locators.seb_expression_block).click()
+        self.driver.find_element(By.ID, Locators.seb_expression_block).send_keys(seb_expression_block)
+
+    def enter_seb_regex_block(self, seb_regex_block):
+        self.driver.find_element(By.ID, Locators.seb_regex_block).click()
+        self.driver.find_element(By.ID, Locators.seb_regex_block).send_keys(seb_regex_block)
+
     # Extra restrictions on attempts tab
-    def click_extra_restrictions_tab(self):
+    def click_extra_restriction_tab(self):
 
-        self.driver.find_element(By.XPATH, Locators.extra_restrictions_tab).click()
+        self.driver.find_element(By.ID, Locators.extra_restriction_tab).click()
 
-    def enter_restrictions_password(self, restrictions_password):
+    def enter_restriction_password(self, restriction_password):
 
-        self.driver.find_element(By.XPATH, Locators.restrictions_password_field).clear()
-        self.driver.find_element(By.XPATH, Locators.restrictions_password_field).click()
-        self.driver.find_element(By.XPATH, Locators.restrictions_password_field).send_keys(restrictions_password)
+        self.driver.find_element(By.XPATH, Locators.restriction_password_link).click()
+        self.driver.find_element(By.ID, Locators.restriction_password_field).send_keys(restriction_password)
 
-    def click_restrictions_show_more(self):
+    def click_restriction_show_more(self):
 
-        self.driver.find_element(By.XPATH, Locators.restrictions_show_more_link).click()
+        self.driver.find_element(By.XPATH, Locators.restriction_show_more_link).click()
 
     def enter_require_network_address(self, require_network_address):
 
@@ -418,15 +483,15 @@ class CreateQuizPage:
         self.driver.find_element(By.ID, Locators.browser_security_menu).click()
         self.driver.find_element(By.ID, Locators.browser_security_menu).send_keys(browser_security)
 
-    def enter_quiz_reattempt(self, quiz_reattempt):
+    def enter_allow_quiz_offline(self, allow_quiz_offline):
 
-        self.driver.find_element(By.ID, Locators.quiz_reattempt_menu).click()
-        self.driver.find_element(By.ID, Locators.quiz_reattempt_menu).send_keys(quiz_reattempt)
+        self.driver.find_element(By.ID, Locators.allow_quiz_offline_menu).click()
+        self.driver.find_element(By.ID, Locators.allow_quiz_offline_menu).send_keys(allow_quiz_offline)
 
     # Overall feedback tab
     def click_overall_feedback_tab(self):
 
-        self.driver.find_element(By.XPATH, Locators.overall_feedback_tab).click()
+        self.driver.find_element(By.ID, Locators.overall_feedback_tab).click()
 
     def enter_grade_boundary1_feedback(self, grade_boundary1_feedback):
 
@@ -450,10 +515,46 @@ class CreateQuizPage:
 
         self.driver.find_element(By.ID, Locators.add_more_feedback_button).click()
 
+    def enter_grade_boundary3(self, grade_boundary3):
+
+        self.driver.find_element(By.ID, Locators.grade_boundary3_field).clear()
+        self.driver.find_element(By.ID, Locators.grade_boundary3_field).click()
+        self.driver.find_element(By.ID, Locators.grade_boundary3_field).send_keys(grade_boundary3)
+
+    def enter_grade_boundary3_feedback(self, grade_boundary3_feedback):
+
+        self.driver.find_element(By.ID, Locators.grade_boundary3_feedback_textbox).clear()
+        self.driver.find_element(By.ID, Locators.grade_boundary3_feedback_textbox).click()
+        self.driver.find_element(By.ID, Locators.grade_boundary3_feedback_textbox).send_keys(grade_boundary3_feedback)
+
+    def enter_grade_boundary4(self, grade_boundary4):
+
+        self.driver.find_element(By.ID, Locators.grade_boundary4_field).clear()
+        self.driver.find_element(By.ID, Locators.grade_boundary4_field).click()
+        self.driver.find_element(By.ID, Locators.grade_boundary4_field).send_keys(grade_boundary4)
+
+    def enter_grade_boundary4_feedback(self, grade_boundary4_feedback):
+
+        self.driver.find_element(By.ID, Locators.grade_boundary4_feedback_textbox).clear()
+        self.driver.find_element(By.ID, Locators.grade_boundary4_feedback_textbox).click()
+        self.driver.find_element(By.ID, Locators.grade_boundary4_feedback_textbox).send_keys(grade_boundary4_feedback)
+
+    def enter_grade_boundary5(self, grade_boundary5):
+
+        self.driver.find_element(By.ID, Locators.grade_boundary5_field).clear()
+        self.driver.find_element(By.ID, Locators.grade_boundary5_field).click()
+        self.driver.find_element(By.ID, Locators.grade_boundary5_field).send_keys(grade_boundary5)
+
+    def enter_grade_boundary5_feedback(self, grade_boundary5_feedback):
+
+        self.driver.find_element(By.ID, Locators.grade_boundary5_feedback_textbox).clear()
+        self.driver.find_element(By.ID, Locators.grade_boundary5_feedback_textbox).click()
+        self.driver.find_element(By.ID, Locators.grade_boundary5_feedback_textbox).send_keys(grade_boundary5_feedback)
+
     # Common module tab
     def click_common_module_tab(self):
 
-        self.driver.find_element(By.XPATH, Locators.common_module_tab).click()
+        self.driver.find_element(By.ID, Locators.common_module_tab).click()
 
     def enter_availability(self, availability):
 
@@ -483,34 +584,116 @@ class CreateQuizPage:
     def click_add_group_restriction(self):
 
         self.driver.find_element(By.XPATH, Locators.add_group_restriction_button).click()
+        self.driver.find_element(By.XPATH, Locators.add_group_restriction_button).click()
 
     # Restrict access tab
     def click_restrict_access_tab(self):
 
-        self.driver.find_element(By.XPATH, Locators.restrict_access_tab).click()
-
-    def click_add_restriction(self):
-
-        self.driver.find_element(By.XPATH, Locators.add_restriction_button).click()
-
-    def click_restriction_activity_completion(self):
-
-        self.driver.find_element(By.XPATH, Locators.restriction_activity_completion_button).click()
+        self.driver.find_element(By.ID, Locators.restrict_access_tab).click()
 
     def enter_student_match(self, student_match):
 
         self.driver.find_element(By.XPATH, Locators.student_match_menu).click()
         self.driver.find_element(By.XPATH, Locators.student_match_menu).send_keys(student_match)
 
+    def enter_group(self, group):
+
+        self.driver.find_element(By.XPATH, Locators.group_menu).click()
+        self.driver.find_element(By.XPATH, Locators.group_menu).send_keys(group)
+
+    def click_add_restriction(self):
+
+        self.driver.find_element(By.XPATH, Locators.add_restriction_button).click()
+
+    def click_restrict_activity_completion(self):
+
+        self.driver.find_element(By.ID, Locators.restrict_activity_completion_button).click()
+
+    def enter_match_all_any(self, match_all_any):
+
+        self.driver.find_element(By.XPATH, Locators.match_all_any_menu).click()
+        self.driver.find_element(By.XPATH, Locators.match_all_any_menu).send_keys(match_all_any)
+
     def enter_choose_activity(self, choose_activity):
 
         self.driver.find_element(By.XPATH, Locators.choose_activity_menu).click()
         self.driver.find_element(By.XPATH, Locators.choose_activity_menu).send_keys(choose_activity)
 
-    def enter_completion_status(self, completion_status):
+    def enter_completion_requirement(self, completion_requirement):
 
-        self.driver.find_element(By.XPATH, Locators.completion_status_menu).click()
-        self.driver.find_element(By.XPATH, Locators.completion_status_menu).send_keys(completion_status)
+        self.driver.find_element(By.XPATH, Locators.completion_requirement_menu).click()
+        self.driver.find_element(By.XPATH, Locators.completion_requirement_menu).send_keys(completion_requirement)
+
+    def click_restrict_date(self):
+
+        self.driver.find_element(By.ID, Locators.restrict_date_button).click()
+
+    def enter_restrict_from_until(self, restrict_from_until):
+
+        self.driver.find_element(By.XPATH, Locators.restrict_from_until_menu).click()
+        self.driver.find_element(By.XPATH, Locators.restrict_from_until_menu).send_keys(restrict_from_until)
+
+    def enter_restrict_day(self, restrict_day):
+
+        self.driver.find_element(By.XPATH, Locators.restrict_day_menu).click()
+        self.driver.find_element(By.XPATH, Locators.restrict_day_menu).send_keys(restrict_day)
+
+    def enter_restrict_month(self, restrict_month):
+
+        self.driver.find_element(By.XPATH, Locators.restrict_month_menu).click()
+        self.driver.find_element(By.XPATH, Locators.restrict_month_menu).send_keys(restrict_month)
+
+    def enter_restrict_year(self, restrict_year):
+
+        self.driver.find_element(By.XPATH, Locators.restrict_year_menu).click()
+        self.driver.find_element(By.XPATH, Locators.restrict_year_menu).send_keys(restrict_year)
+
+    def enter_restrict_hour(self, restrict_hour):
+        self.driver.find_element(By.XPATH, Locators.restrict_hour_menu).click()
+        self.driver.find_element(By.XPATH, Locators.restrict_hour_menu).send_keys(restrict_hour)
+
+    def enter_restrict_minute(self, restrict_minute):
+
+        self.driver.find_element(By.XPATH, Locators.restrict_minute_menu).click()
+        self.driver.find_element(By.XPATH, Locators.restrict_minute_menu).send_keys(restrict_minute)
+
+    def click_restrict_grade(self):
+        self.driver.find_element(By.ID, Locators.restrict_grade_button).click()
+
+    def enter_restrict_grade(self, restrict_grade):
+
+        self.driver.find_element(By.XPATH, Locators.restrict_grade_menu).click()
+        self.driver.find_element(By.XPATH, Locators.restrict_grade_menu).send_keys(restrict_grade)
+
+    def click_restrict_greater_than_checkbox(self):
+
+        self.driver.find_element(By.XPATH, Locators.restrict_greater_than_checkbox).click()
+
+    def enter_restrict_greater_than(self, restrict_greater_than):
+        self.driver.find_element(By.XPATH, Locators.restrict_greater_than_field).click()
+        self.driver.find_element(By.XPATH, Locators.restrict_greater_than_field).send_keys(restrict_greater_than)
+
+    def click_restrict_less_than_checkbox(self):
+        self.driver.find_element(By.XPATH, Locators.restrict_less_than_checkbox).click()
+
+    def enter_restrict_less_than(self, restrict_less_than):
+        self.driver.find_element(By.XPATH, Locators.restrict_less_than_field).click()
+        self.driver.find_element(By.XPATH, Locators.restrict_less_than_field).send_keys(restrict_less_than)
+
+    def click_restrict_profile(self):
+        self.driver.find_element(By.ID, Locators.restrict_profile_button).click()
+
+    def enter_restrict_profile_field(self, restrict_profile_field):
+        self.driver.find_element(By.XPATH, Locators.restrict_profile_field_menu).click()
+        self.driver.find_element(By.XPATH, Locators.restrict_profile_field_menu).send_keys(restrict_profile_field)
+
+    def enter_restrict_profile_operator(self, restrict_profile_operator):
+        self.driver.find_element(By.XPATH, Locators.restrict_profile_operator_menu).click()
+        self.driver.find_element(By.XPATH, Locators.restrict_profile_operator_menu).send_keys(restrict_profile_operator)
+
+    def enter_restrict_profile_value(self, restrict_profile_value):
+        self.driver.find_element(By.XPATH, Locators.restrict_profile_value_field).click()
+        self.driver.find_element(By.XPATH, Locators.restrict_profile_value_field).send_keys(restrict_profile_value)
 
     # Activity completion tab
     def click_activity_completion_tab(self):
@@ -554,7 +737,7 @@ class CreateQuizPage:
     # Tags tab
     def click_tags_tab(self):
 
-        self.driver.find_element(By.XPATH, Locators.quiz_tags_tab).click()
+        self.driver.find_element(By.ID, Locators.quiz_tags_tab).click()
 
     def enter_tags(self, quiz_tags):
 
@@ -565,7 +748,7 @@ class CreateQuizPage:
     # Competencies tab
     def click_competencies_tab(self):
 
-        self.driver.find_element(By.XPATH, Locators.competencies_tab).click()
+        self.driver.find_element(By.ID, Locators.competencies_tab).click()
 
     def enter_course_competencies(self, course_competencies):
 
